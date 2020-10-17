@@ -11,14 +11,19 @@ namespace DoSimpleMat
         static void Main(string[] args)
         {
             var a = new int[,] { { 1, 2 }, { 3, 4 } };
-
-            Mat<int>.Print(a, nameof(a));
             var b = new int[,] { { 5, 6 }, { 7, 8 } };
-            Mat<int>.Print(b, nameof(b));
+                    
 
-            var oMat = new Mat<int>();
-            var c = oMat.MatMult(a, b);
-            Mat<int>.Print(c, nameof(c));
+            var A = new Mat<int>(a);
+            var B = new Mat<int>(b);
+            A.Print(nameof(A));
+            B.Print(nameof(B));
+
+            var C = A + B;
+            var D = A * B;
+
+            C.Print(nameof(C));
+            D.Print(nameof(D));
 
             Console.ReadLine();
         }

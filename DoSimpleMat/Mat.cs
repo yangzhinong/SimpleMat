@@ -8,6 +8,36 @@ namespace DoSimpleMat
 {
     class Mat<T> where T : struct, IComparable, IComparable<T>, IEquatable<T>
     {
+
+        public T[,] Array { get; set; }
+
+
+        public  Mat(T[,] array)
+        {
+            Array = array;
+        }
+
+        /// <summary>
+        ///  矩阵相加
+        /// </summary>
+        /// <param name="a"></param>
+        /// <param name="b"></param>
+        /// <returns></returns>
+        public static Mat<T> operator +(Mat<T> a , Mat<T> b)
+        {
+            return new Mat<T>(MatAdd(a.Array, b.Array));
+        }
+        /// <summary>
+        /// 矩阵相乘
+        /// </summary>
+        /// <param name="a"></param>
+        /// <param name="b"></param>
+        /// <returns></returns>
+        public static Mat<T> operator *(Mat<T> a, Mat<T> b)
+        {
+            return new Mat<T>(MatMult(a.Array, b.Array));
+        }
+
         /// <summary>
         /// 矩阵数乘(几何解释为向量缩放)
         /// </summary>
@@ -35,7 +65,7 @@ namespace DoSimpleMat
         /// <param name="a"></param>
         /// <param name="b"></param>
         /// <returns></returns>
-        public T[,] MatMult(T[,] a, T[,] b)
+        public static T[,]  MatMult(T[,] a, T[,] b)
         {
             if (a == null || b == null) throw new ArgumentNullException("参数不能为空");
             var r1 = GetRowCount(a); //行数
@@ -81,7 +111,7 @@ namespace DoSimpleMat
             T[,] ret = new T[r1, c1];
             for (var i = 0; i < r1; i++)
             {
-                for (var j = 0; j < c1; i++)
+                for (var j = 0; j < c1; j++)
                 {
                     ret[i, j] = (dynamic)a[i, j] + b[i, j];
                 }
@@ -127,5 +157,12 @@ namespace DoSimpleMat
             }
             Console.WriteLine($"-------{name} End--------------");
         }
+
+        public void Print(string name)
+        {
+            Print(Array, name);
+        }
+
+        
     }
 }
