@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30413.136
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DoSimpleMat", "DoSimpleMat\DoSimpleMat.csproj", "{20FC39C3-C318-46EC-9908-791CD54B0D72}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{20FC39C3-C318-46EC-9908-791CD54B0D72}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20FC39C3-C318-46EC-9908-791CD54B0D72}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20FC39C3-C318-46EC-9908-791CD54B0D72}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20FC39C3-C318-46EC-9908-791CD54B0D72}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {60681B3A-4B00-44D3-BD62-DBC6DAB3FAFD}
+	EndGlobalSection
+EndGlobal
