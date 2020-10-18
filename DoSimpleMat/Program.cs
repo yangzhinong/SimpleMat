@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
+using Xunit;
 
 namespace DoSimpleMat
 {
@@ -10,20 +12,16 @@ namespace DoSimpleMat
     {
         static void Main(string[] args)
         {
-            var a = new int[,] { { 1, 2 }, { 3, 4 } };
-            var b = new int[,] { { 5, 6 }, { 7, 8 } };
-                    
+    
+           var  F = new Mat<int>(new int[,]
+            {
+                {1,2},
+                {-1,-3 }
+            });
 
-            var A = new Mat<int>(a);
-            var B = new Mat<int>(b);
-            A.Print(nameof(A));
-            B.Print(nameof(B));
+            F.Get_1().Print("矩阵逆");
 
-            var C = A + B;
-            var D = A * B;
 
-            C.Print(nameof(C));
-            D.Print(nameof(D));
 
             Console.ReadLine();
         }
